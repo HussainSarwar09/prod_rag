@@ -14,5 +14,4 @@ class LLM(Protocol):
         self,
         query: Query,
         context: list[Chunk],
-    ) -> Answer:
-        ...
+    ) -> Answer: ...

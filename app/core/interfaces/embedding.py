@@ -9,11 +9,9 @@ class EmbeddingModel(Protocol):
     def embed_documents(
         self,
         texts: list[str],
-    ) -> list[list[float]]:
-        ...
+    ) -> list[list[float]]: ...
 
     def embed_query(
         self,
         text: str,
-    ) -> list[float]:
-        ...
+    ) -> list[float]: ...

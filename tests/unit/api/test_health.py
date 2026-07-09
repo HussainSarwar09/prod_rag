@@ -3,6 +3,7 @@ from fastapi.testclient import TestClient
 
 pytestmark = pytest.mark.unit
 
+
 def test_root_endpoint(client: TestClient) -> None:
     response = client.get("/")
 
@@ -19,6 +20,4 @@ def test_health_endpoint(client: TestClient) -> None:
 
     assert response.status_code == 200
 
-    assert response.json() == {
-        "status": "healthy"
-    }
+    assert response.json() == {"status": "healthy"}
