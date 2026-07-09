@@ -23,6 +23,8 @@ dependencies = [
     "orjson (>=3.11.9,<4.0.0)"
 ]
 
+[tool.poetry]
+package-mode = false
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -33,7 +35,6 @@ dev = [
     "pytest (>=9.1.1,<10.0.0)",
     "pytest-asyncio (>=1.4.0,<2.0.0)",
     "pytest-cov (>=7.1.0,<8.0.0)",
-    "black (>=26.5.1,<27.0.0)",
     "ruff (>=0.15.20,<0.16.0)",
     "mypy (>=2.2.0,<3.0.0)",
     "pre-commit (>=4.6.0,<5.0.0)",
@@ -52,10 +53,6 @@ select = [
     "UP",
     "B"
 ]
-
-[tool.black]
-line-length = 100
-target-version = ["py313"]
 
 [tool.mypy]
 python_version = "3.13"
