@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+
+# Environment Variables
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+
+# Testing
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Type Checking
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Chroma Database
+chroma/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Poetry
+poetry.toml
