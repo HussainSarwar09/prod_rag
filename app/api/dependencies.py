@@ -1,17 +1,13 @@
 """
-Shared FastAPI dependencies.
-
-This module contains reusable dependencies that can be injected into
-API endpoints using FastAPI's dependency injection system.
+API dependency providers.
 """
 
-from typing import Annotated
+from app.core.container import container
+from app.loaders.factory import LoaderFactory
 
-from fastapi import Depends
 
-from app.config.settings import Settings, get_settings
-
-SettingsDependency = Annotated[
-    Settings,
-    Depends(get_settings),
-]
+def get_loader_factory() -> LoaderFactory:
+    """
+    Return the shared LoaderFactory instance.
+    """
+    return container.loader_factory

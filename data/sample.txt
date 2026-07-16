@@ -1,0 +1,3 @@
+Hello from the production RAG project.
+
+This is the first document ingestion test.

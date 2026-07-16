@@ -19,7 +19,7 @@ def utc_now() -> datetime:
     return datetime.now(UTC)
 
 
-@dataclass(slots=True)
+@dataclass(slots=True, kw_only=True)
 class BaseEntity:
     """
     Base class for all domain entities.

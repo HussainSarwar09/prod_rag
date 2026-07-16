@@ -1,0 +1,5 @@
+Hello Production RAG!
+
+This is the first fixture.
+
+Line 3.
