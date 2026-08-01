@@ -3,6 +3,7 @@ from functools import lru_cache
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from app.config.api import APISettings
+from app.config.chunking import ChunkingSettings
 from app.config.embedding import EmbeddingSettings
 from app.config.llm import LLMSettings
 from app.config.logging import LoggingSettings
@@ -22,6 +23,8 @@ class Settings(BaseSettings):
     vectorstore: VectorStoreSettings = VectorStoreSettings()
 
     prompts: PromptSettings = PromptSettings()
+
+    chunking: ChunkingSettings = ChunkingSettings()
 
     model_config = SettingsConfigDict(
         env_file=".env",

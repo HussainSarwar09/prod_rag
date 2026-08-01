@@ -4,6 +4,7 @@ Application dependency container.
 Responsible for creating and managing shared application services.
 """
 
+from app.chunking.chunker import DocumentChunker
 from app.config.settings import get_settings
 from app.loaders.factory import LoaderFactory
 from app.loaders.markdown_loader import MarkdownLoader
@@ -24,6 +25,8 @@ class Container:
         # Shared services
         #
         self.metadata_extractor = MetadataExtractor()
+
+        self.document_chunker = DocumentChunker(self.settings.chunking)
 
         #
         # Readers

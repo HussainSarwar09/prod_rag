@@ -36,21 +36,16 @@ The goal of this project is not simply to build a chatbot, but to demonstrate ho
 
 # Current Status
 
-**Sprint 1 – Project Foundation**
+**Sprint 3 – Chunking pipeline**
 
 Completed:
 
-* Project structure
-* Dependency management with Poetry
-* FastAPI application
-* Application Factory pattern
-* Centralized configuration
-* API versioning
-* Structured logging
-* Docker support
-* Unit testing framework
-* GitHub Actions
-* Pre-commit hooks
+* Sprint 1 project foundation
+* Sprint 2 document ingestion for text, Markdown, and PDF sources
+* Deterministic token-window chunking with configurable size and overlap
+* Source character offsets, stable chunk IDs, and linked neighbouring chunks
+* Markdown heading provenance and source metadata propagated to each chunk
+* Chunking configuration and dependency-container wiring
 
 ---
 
