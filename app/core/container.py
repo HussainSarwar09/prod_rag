@@ -6,12 +6,14 @@ Responsible for creating and managing shared application services.
 
 from app.chunking.chunker import DocumentChunker
 from app.config.settings import get_settings
+from app.core.providers.embeddings import build_embedding_provider
 from app.loaders.factory import LoaderFactory
 from app.loaders.markdown_loader import MarkdownLoader
 from app.loaders.pdf_loader import PDFLoader
 from app.loaders.text_loader import TextLoader
 from app.readers.pdf_reader import PDFReader
 from app.readers.text_reader import TextReader
+from app.services.ingestion.service import IngestionService
 from app.services.metadata.extractor import MetadataExtractor
 
 
@@ -27,6 +29,7 @@ class Container:
         self.metadata_extractor = MetadataExtractor()
 
         self.document_chunker = DocumentChunker(self.settings.chunking)
+        self.embedding_model = build_embedding_provider(self.settings.embeddings)
 
         #
         # Readers
@@ -61,6 +64,12 @@ class Container:
                 self.markdown_loader,
                 self.pdf_loader,
             ]
+        )
+
+        self.ingestion_service = IngestionService(
+            loader_factory=self.loader_factory,
+            chunker=self.document_chunker,
+            embedding_model=self.embedding_model,
         )
 
 

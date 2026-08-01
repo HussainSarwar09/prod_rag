@@ -14,6 +14,7 @@ class Chunk(BaseEntity):
     token_count: int = 0
     start_offset: int = 0
     end_offset: int = 0
+    embedding: list[float] | None = None
     metadata: ChunkMetadata = field(default_factory=ChunkMetadata)
     previous_chunk_id: str | None = None
     next_chunk_id: str | None = None
@@ -32,6 +33,8 @@ class Chunk(BaseEntity):
             raise ValueError("Chunk end_offset must not precede start_offset.")
         if self.end_offset - self.start_offset != len(self.content):
             raise ValueError("Chunk offsets must describe exactly the chunk content.")
+        if self.embedding is not None and not self.embedding:
+            raise ValueError("Chunk embedding must be omitted or contain vector values.")
 
     @property
     def character_count(self) -> int:

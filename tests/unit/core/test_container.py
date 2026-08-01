@@ -6,6 +6,8 @@ def test_container() -> None:
     assert container.settings is not None
     assert container.metadata_extractor is not None
     assert container.document_chunker is not None
+    assert container.embedding_model is not None
+    assert container.ingestion_service is not None
     assert container.text_reader is not None
     assert container.pdf_reader is not None
 
