@@ -25,3 +25,4 @@ class ChunkMetadata:
     mime_type: str = ""
     content_hash: str = ""
     chunker_version: str = ""
+    chunking_strategy: str = ""
